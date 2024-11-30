@@ -1,0 +1,366 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/background/background1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.leftSection {
+  width: 40%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.textContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 480px;
+  height: 68px;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 60px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  opacity: 1;
+  z-index: 2;
+}
+
+.subtitle {
+  position: absolute;
+  top: 265px;
+  left: 0;
+  width: 480px;
+  height: 45px;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  text-align: left;
+  opacity: 1;
+  z-index: 2;
+}
+
+.textContent h1 {
+  font-size: 3.1rem;
+  margin-bottom: 1rem;
+}
+
+.textContent p {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.enterButton {
+  position: absolute;
+  top: 640px;
+  left: 0;
+  padding: 1rem 2rem;
+  background-color: #CE022C;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  z-index: 1;
+  font-size: 1rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.enterButton:hover {
+  background-color: #FD3560;
+}
+
+.rightSection {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  margin: calc(15vh) 0;
+  height: calc(65vh);
+  margin-left: 25%;
+  margin-right: 10%;
+  padding-right: 0;
+  z-index: 2;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: calc(100% + 4px);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carouselSlide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.carouselImage {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 64px);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  object-fit: contain;
+}
+
+.carouselImage.active {
+  opacity: 1;
+}
+
+.prizeText {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  color: black;
+  font-size: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding: 0 20px;
+  z-index: 4;
+}
+
+.prizeText.active {
+  opacity: 1;
+}
+
+.placeText {
+  color: #7E011C;
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.prizeText > div {
+  width: 100%;
+  text-align: left;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  gap: 2px;
+  padding: 0 2px;
+  z-index: 5;
+}
+
+.indicator {
+  flex: 1;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #FD3560;
+}
+
+.presentedBy {
+  position: absolute;
+  top: 340px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0px;
+  white-space: nowrap;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+.presentedText {
+  font-weight: normal;
+  display: inline-block;
+}
+
+.pepsiText {
+  color: #FD3560;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.pepsiLogo {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.instructionsWrapper {
+  position: absolute;
+  top: 400px;
+  left: 0;
+  width: 536px;
+  z-index: 2;
+  display: flex;
+  gap: 28px;
+  justify-content: flex-start;
+}
+
+.contestInfo {
+  position: absolute;
+  top: 95px;
+  left: 30%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+.contestLogo {
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: contain;
+}
+
+.contestText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+  justify-content: center;
+  height: 100px;
+}
+
+.contestLabel {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.contestName {
+  color: #FD3560;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.countdownTimer {
+  position: absolute;
+  top: 20px;
+  left: 35px;
+  color: #FFFFFF;
+  font-size: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.countdownLabel {
+  font-weight: normal;
+}
+
+.countdownTime {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  .leftSection,
+  .rightSection {
+    width: 100%;
+    padding: 1rem 5%;
+  }
+
+  .leftSection {
+    order: 2;
+  }
+
+  .rightSection {
+    order: 1;
+    justify-content: center;
+    padding: 2rem 5%;
+    margin: 0 !important; /* Use !important to override the desktop margins only in mobile view */
+    height: auto;
+  }
+
+  .textContent {
+    text-align: center;
+  }
+
+  .enterButton {
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+  }
+}
