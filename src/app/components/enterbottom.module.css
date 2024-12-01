@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  background-color: #F5F5F5;
+  padding: 60px 20px;
+  color: black;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: black;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: black;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+}
+
+.enterButton {
+  padding: 1rem 2rem;
+  background-color: #CE022C;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.enterButton:hover {
+  background-color: #FD3560;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+    color: black;
+  }
+
+  .title {
+    font-size: 28px;
+    color: black;
+  }
+
+  .description {
+    font-size: 14px;
+    color: black;
+  }
+}

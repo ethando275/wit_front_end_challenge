@@ -1,3 +1,11 @@
+/**
+ * Top hero section component that displays:
+ * - Full-width background image
+ * - Countdown timer
+ * - Left section with content
+ * - Right section with prize carousel
+ * Features responsive design with mobile optimization
+ */
 "use client";
 
 import { useEffect, useState, useRef } from "react";
@@ -6,10 +14,13 @@ import styles from "./top.module.css";
 import Instructions from "./instructions";
 
 export default function Top() {
+  // State for current slide and countdown timer
   const [currentSlide, setCurrentSlide] = useState(0);
   const [countdown, setCountdown] = useState("");
   const timerRef = useRef(null);
   const countdownRef = useRef(null);
+
+  // Array of images for carousel
   const images = [
     "/carousel/carousel1.png",
     "/carousel/carousel2.png",
@@ -18,6 +29,7 @@ export default function Top() {
     "/carousel/carousel5.png",
   ];
 
+  // Array of place text for prizes
   const placeText = [
     "FIRST PLACE",
     "SECOND PLACE",
@@ -26,6 +38,7 @@ export default function Top() {
     "FIFTH PLACE",
   ];
 
+  // Array of prize text for prizes
   const prizeText = [
     "FRESNO STATE JERSEY, $50 GIFT CARD, PEPSI PRODUCT",
     "FRESNO STATE BACKPACK, MOPHIE POWER PACK, PEPSI PRODUCT",
@@ -34,6 +47,7 @@ export default function Top() {
     "BIG 3 BOBBLEHEAD (PAUL GEORGE, AARON JUDGE, DEREK CARR)",
   ];
 
+  // Function to start timer for carousel
   const startTimer = () => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
@@ -43,6 +57,7 @@ export default function Top() {
     }, 5000);
   };
 
+  // Function to handle indicator click for carousel
   const handleIndicatorClick = (index) => {
     setCurrentSlide(index);
     if (timerRef.current) {
@@ -51,6 +66,7 @@ export default function Top() {
     startTimer();
   };
 
+  // Effect to update countdown timer
   useEffect(() => {
     // Set target date to May 1, 2025
     const targetDate = new Date("2025-05-01T00:00:00");
@@ -83,6 +99,7 @@ export default function Top() {
     };
   }, []);
 
+  // Effect to start timer for carousel
   useEffect(() => {
     startTimer();
     return () => {
@@ -92,8 +109,12 @@ export default function Top() {
 
   return (
     <div className={styles.container}>
+      {/* Background image */}
       <div className={styles.backgroundImage} />
+
+      {/* Main content */}
       <div className={styles.content}>
+        {/* Left section with text and button */}
         <div className={styles.leftSection}>
           <div className={styles.countdownTimer}>
             <span className={styles.countdownLabel}>VOTING BEGINS IN </span>
@@ -139,6 +160,8 @@ export default function Top() {
             <button className={styles.enterButton}>Enter Now</button>
           </div>
         </div>
+
+        {/* Right section with prize images */}
         <div className={styles.rightSection}>
           <div className={styles.carouselContainer}>
             {images.map((image, index) => (
